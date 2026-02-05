@@ -1,0 +1,239 @@
+/*  VARIABLES de couleurs a utiliser dans le css  */
+:root {
+    --primary-color: #1A1A1B;
+    --secondary-color: #343434;
+    --text-dark: #2d3748;
+    --text-light: #5c636d;
+    --bg-light: #f7fafc;
+    --bg-white:#f8eac8;
+    --bg-dark:#4A2534;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* smooth transitions for main elements */
+section, .nav, footer {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* accessible focus for theme button */
+.theme-btn:focus {
+    outline: 3px solid rgba(255,255,255,0.25);
+    outline-offset: 2px;
+}
+
+/* prefers-color-scheme fallback */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-mode) {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+}
+
+/*  barre de navigation */
+.nav {
+    background: var(--primary-color) ;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* bouton de changement de couleur */
+.theme-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* mode sombre */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: #e0e0e0;
+}
+
+
+body.dark-mode section h2 {
+    color: #9dc4ff;
+    border-bottom-color: #667eea;
+}
+
+body.dark-mode section p {
+    color: #b0b0b0;
+}
+
+body.dark-mode footer {
+    background:  #1a1a1a;
+}
+
+/* sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top:5rem;
+}
+
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 4px solid var(--secondary-color);
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+
+/*  bouton atractif avec js  */
+.interactive-btn {
+    background:  var(--primary-color) ;
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    display:right;
+}
+
+.interactive-btn:hover {
+    transform: translateY(-2px);
+}
+
+.interactive-btn:active {
+    transform: translateY(0);
+}
+
+/*  FOOTER  */
+footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+/*  ANIMATIONS  */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* version responsif pour telephone */
+@media (max-width: 768px) {
+    .nav ul {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        padding: 1rem;
+    }
+}
