@@ -206,10 +206,16 @@ section {
 /* version responsif pour telephone */
 @media (max-width: 768px) {
     .nav ul {
-        gap: 1rem;
-        flex-direction: column;
+        gap: 0.8rem;
+        flex-direction: row;
         align-items: center;
         flex-wrap: nowrap;       
+    }
+
+    .nav a {
+        font-size: 0.9rem;     
+        padding: 0.4rem 0.6rem;
+        white-space: nowrap;
     }
 
     section {
@@ -218,6 +224,7 @@ section {
 
     section h2 {
         font-size: 1.8rem;
+        color:#f7fafc;
     }
 
     section p {
