@@ -206,8 +206,8 @@ section {
 /* version responsif pour telephone */
 @media (max-width: 768px) {
     .nav ul {
-        gap: 1rem;
-        flex-direction: column;
+        gap: 0.5rem;
+        flex-direction: inline;
         align-items: center;
     }
 
