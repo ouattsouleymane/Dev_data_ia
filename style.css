@@ -202,8 +202,19 @@ footer {
 section {
     animation: fadeInUp 0.6s ease-out;
 }
+/*  design responsive  */
 
-/* version responsif pour telephone */
+/* Empêche le titre de la première section d'être caché */
+section:first-of-type {
+    padding-top: 7rem;
+}
+
+/* Empêche la fin de la dernière section d'être cachée par le footer */
+section:last-of-type {
+    padding-bottom: 6rem;
+}
+
+/* Tablette et appareils plus petits  */
 @media (max-width: 768px) {
     .nav ul {
         gap: 0.8rem;
@@ -218,47 +229,25 @@ section {
         white-space: nowrap;
     }
 
+    .nav {
+        padding: 1rem;
+    }
+
     section {
         padding: 2rem 1rem;
     }
 
     section h2 {
         font-size: 1.8rem;
-        color:#f7fafc;
+        color: var(--primary-color);
     }
 
     section p {
         font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    section {
-        padding: 1.5rem 1rem;
+        color: var(--text-light);
     }
 
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    .nav {
-        padding: 1rem;
-    }
-
-
-
-/* Empêche le titre de la première section d’être caché */
-section:first-of-type {
-    padding-top: 7rem;
-}
-
-/* Empêche la fin de la dernière section d’être cachée par le footer */
-section:last-of-type {
-    padding-bottom: 6rem;
-}
-
-/* Ajustement mobile */
-@media (max-width: 768px) {
+    /* Ajustement des espacements */
     section:first-of-type {
         padding-top: 6.5rem;
     }
@@ -268,4 +257,38 @@ section:last-of-type {
     }
 }
 
+/* Smartphones */
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+
+    .nav {
+        padding: 0.75rem;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.5rem;
+    }
+
+    /* les espacements des section  pour mobile */
+    section:first-of-type {
+        padding-top: 6rem;
+    }
+
+    section:last-of-type {
+        padding-bottom: 6.5rem;
+    }
 }
+
+
