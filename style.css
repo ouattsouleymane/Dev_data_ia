@@ -216,6 +216,9 @@ section:last-of-type {
 
 /* Tablette et appareils plus petits  */
 @media (max-width: 768px) {
+    body{
+        background-color: var(--bg-white);
+    }
     .nav ul {
         gap: 0.8rem;
         flex-direction: row;
