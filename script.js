@@ -2,8 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     createInteractiveButton();
     animateOnScroll();
-    
     initThemeToggle();
+    initHamburgerMenu();
 });
 
 // bouton
