@@ -237,4 +237,28 @@ section {
     .nav {
         padding: 1rem;
     }
+
+
+
+/* Empêche le titre de la première section d’être caché */
+section:first-of-type {
+    padding-top: 7rem;
+}
+
+/* Empêche la fin de la dernière section d’être cachée par le footer */
+section:last-of-type {
+    padding-bottom: 6rem;
+}
+
+/* Ajustement mobile */
+@media (max-width: 768px) {
+    section:first-of-type {
+        padding-top: 6.5rem;
+    }
+
+    section:last-of-type {
+        padding-bottom: 7rem;
+    }
+}
+
 }
