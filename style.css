@@ -216,8 +216,11 @@ section:last-of-type {
 
 /* Tablette et appareils plus petits  */
 @media (max-width: 768px) {
-    body{
-        background-color: var(--bg-white);
+  body:not(.dark-mode) {
+        background-color: var(--bg-light);
+    }
+        body.dark-mode {
+        background-color: var(--bg-dark); /* garde le dark mode */
     }
     .nav ul {
         gap: 0.8rem;
@@ -262,6 +265,13 @@ section:last-of-type {
 
 /* Smartphones */
 @media (max-width: 480px) {
+
+     body:not(.dark-mode) {
+        background-color: var(--bg-light);
+    }
+        body.dark-mode {
+        background-color: var(--bg-dark); /* garde le dark mode */
+    }
     section {
         padding: 1.5rem 1rem;
     }
